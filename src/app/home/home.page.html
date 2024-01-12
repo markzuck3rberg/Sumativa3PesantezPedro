@@ -1,20 +1,39 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="caret-forward-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <app-nav-bar
+      [Busqueda]="Busqueda"
+      (buscarEvent)="onBuscar($event)"
+    ></app-nav-bar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content>
+  <ion-row class="news-row">
+    <ion-row class="news-row">
+    <ng-container *ngFor="let i of [1, 2, 3, 4, 5]">
+      <ion-col size="12" size-md="6" size-lg="4" class="contenedor">
+        <app-news-card
+          [TitNoti]="'Noticia ' + i"
+          [DescripNoti]="'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, error.'"
+        ></app-news-card>
+        <ion-col size="12" size-md="6" size-sm="4">
+          <app-news-card 
+          [ImagNoti]="'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Fox_News_Channel_logo.svg/1200px-Fox_News_Channel_logo.svg.png'"
+          class="image-card">
+        </app-news-card>
+        </ion-col>
+      </ion-col>
+    </ng-container>
+  </ion-row>
+  </ion-row>
 </ion-content>

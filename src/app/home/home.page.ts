@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  Busqueda: string = "";
+
+  onBuscar(event: string) {
+    this.Busqueda = event;
+  }
 
 }
