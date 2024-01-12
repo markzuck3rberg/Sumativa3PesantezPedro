@@ -19,21 +19,16 @@
 
 <ion-content>
   <ion-row class="news-row">
-    <ion-row class="news-row">
-    <ng-container *ngFor="let i of [1, 2, 3, 4, 5]">
+    <ng-container *ngFor="let noticia of noticias">
       <ion-col size="12" size-md="6" size-lg="4" class="contenedor">
         <app-news-card
-          [TitNoti]="'Noticia ' + i"
-          [DescripNoti]="'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, error.'"
+          [TitNoti]="noticia.title"  
+          [DescripNoti]="noticia.desc"
+          [ImagNoti]="noticia.img" 
+          class="image-card"
         ></app-news-card>
-        <ion-col size="12" size-md="6" size-sm="4">
-          <app-news-card 
-          [ImagNoti]="'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Fox_News_Channel_logo.svg/1200px-Fox_News_Channel_logo.svg.png'"
-          class="image-card">
-        </app-news-card>
-        </ion-col>
       </ion-col>
     </ng-container>
   </ion-row>
-  </ion-row>
 </ion-content>
+

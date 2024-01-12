@@ -1,5 +1,11 @@
-  <div>
-    <h3>{{TitNoti}}</h3>
-    <p>{{DescripNoti}}</p>
-    <img [src]=ImagNoti />
-  </div>
+<h3>{{TitNoti}}</h3>
+<ion-grid fixed>
+  <ion-row>
+    <ion-col size="12" size-md="6" size-lg="4">
+      <p>{{DescripNoti}}</p>
+    </ion-col>
+    <ion-col size="12" size-md="6" size-lg="4" >
+      <img [src]=ImagNoti />
+    </ion-col>
+  </ion-row>
+</ion-grid>
